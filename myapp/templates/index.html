@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+{% include "include/navbar.html" %}
+{% endblock navbar %}
+
+{% block content %}
+<main>
+    <div class="clock-calendar">
+        <div class="">Current Time: <div id="clock" class="clock blinking-box"></div></div>
+        <div class="">Today's Date: <div id="calendar" class="calendar blinking-box">July 09, 2024</div></div>
+    </div>
+
+    <!-- Random Quote -->
+    <section id="quote">
+        <h2>Quote of the Day</h2>
+        <div class="quotes-container">
+            <div class="quote-card">
+                <p class="quote">{{ random_quote }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Vertical Sections -->
+    <div class="two-columns">
+        <!-- Left Section: Table for User Submission Data -->
+        <section id="user-data">
+            <h2>User Submission Data</h2>
+            <table id="submission-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if users %}
+                    {% for user in users %}
+                    <tr>
+                        <td class="user-data-cell">{{ user.name }}</td>
+                        <td class="user-data-cell">{{ user.email }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td class="user-data-cell">No User</td>
+                        <td class="user-data-cell">No User</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Right Section: Submit Your Details Form -->
+        <section id="form">
+            <h2>Submit Your Details</h2>
+            <form action="{% url "home" %}" method="POST">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                {{ form.name }}
+                <br>
+                <label for="email">Email:</label>
+                {{ form.email }}
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+</main>
+{% endblock content %}

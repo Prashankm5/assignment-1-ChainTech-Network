@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+    <link rel="stylesheet" href="/static/myapp_css/style.css">
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            
+            // Pad single digit minutes and seconds with leading zeros
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').textContent = timeString;
+            
+            setTimeout(updateClock, 1000); // Update every second
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateClock(); // Start clock function on page load
+            animateQuotes(); // Start quote animation on page load
+        });
+
+        function animateQuotes() {
+            var quotes = document.querySelectorAll('.quote-card');
+            quotes.forEach(function(quote, index) {
+                setTimeout(function() {
+                    quote.style.opacity = '1';
+                    quote.style.transform = 'translateY(0)';
+                }, index * 500); // Delay each quote animation
+            });
+        }
+    </script>
+</head>
+<body>
+    {% include "include/alert.html" %}
+    {% block navbar %}{% endblock navbar %}
+    
+    {% block content %}{% endblock content %}
+
+    
+    <footer>
+        <h2>Contact Information</h2>
+        <address>
+            Email: example@example.com<br>
+            Phone: (123) 456-7890
+        </address>
+        <p>&copy; 2024 My Simple Web Page. All rights reserved.</p>
+    </footer>
+    </body>
+    </html>

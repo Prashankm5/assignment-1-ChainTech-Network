@@ -1,0 +1,8 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="notification">
+            <button type="button" class="close" onclick="this.parentElement.style.display='none';">&times;</button>
+            <strong>{{ message }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}

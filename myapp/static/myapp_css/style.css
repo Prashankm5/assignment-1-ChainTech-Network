@@ -1,0 +1,320 @@
+/* Add any additional styling you need here */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    transition: color 0.3s ease-in-out;
+}
+
+header h1:hover {
+    color: #ff6347; /* Tomato color */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #ff6347; /* Tomato color */
+    color: #fff;
+}
+
+main {
+    padding: 2em;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+main h2:hover {
+    color: #ff6347; /* Tomato color */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+footer p:hover {
+    color: #ff6347; /* Tomato color */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    main {
+        padding: 1em;
+        width: 95%;
+    }
+
+    .two-columns {
+        flex-direction: column;
+    }
+
+    #user-data, #form {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 0.5em;
+        width: 100%;
+    }
+}
+
+.blinking-box {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 1.5em;
+    animation: blinking 1s infinite;
+}
+
+@keyframes blinking {
+    0% { background-color: rgba(255, 0, 0, 0.356); }
+    50% { background-color: rgb(0, 149, 255); }
+    100% { background-color: rgba(235, 137, 137, 0.969); }
+}
+
+.clock-calendar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.clock {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.calendar {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+/* Quotes Section Styles */
+.quotes-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quote-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.quote-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.quote {
+    font-style: italic;
+    color: #666;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+form input:focus {
+    border-color: #ff6347; /* Tomato color */
+}
+
+form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ff6347; /* Tomato color */
+    color: #fff;
+}
+
+.two-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+#user-data, #form {
+    width: 48%; /* Adjust as needed */
+}
+
+#user-data {
+    margin-right: 2%; /* Adjust spacing between sections */
+}
+
+#form {
+    margin-left: 2%; /* Adjust spacing between sections */
+}
+
+/* User Submission Data Table */
+#submission-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#submission-table th, #submission-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#submission-table th {
+    background-color: #f2f2f2;
+}
+
+.user-data-cell {
+    padding: 12px; /* Adjust as needed */
+}
+
+@keyframes show-toast {
+    0% { bottom: -100%; }
+    20% { bottom: 50%; } /* Stops at half the height of the screen */
+    80% { bottom: 50%; }
+    100% { bottom: -100%; }
+}
+
+.notification {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    background-color: #333; /* Darker background for better visibility */
+    color: #fff; /* White text for contrast */
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 300px; /* Adjust width as needed */
+    animation: show-toast 8s; /* Adjust animation duration as needed */
+    z-index: 99;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Optional: add border-radius for rounded corners */
+}
+
+.notification .close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
